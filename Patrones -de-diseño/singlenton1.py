@@ -22,7 +22,9 @@ class Configuracion:
         self._configuracion[clave] = valor
 
 # Uso
-configuracion = Configuracion({'idioma': 'es', 'tema': 'oscuro'})  # Crea una instancia de Configuracion
+configuracion = Configuracion({'idioma': 'es,', 'tema': 'oscuro','pantalla':'lcd'})  # Crea una instancia de Configuracion
 print(configuracion.obtener_valor('idioma'))  # Output: es
-configuracion.establecer_valor('idioma', 'en')  # Establece el idioma a 'en'
-print(configuracion.obtener_valor('idioma'))  # Output: en
+configuracion.establecer_valor('senal', 'digital')  # Establece el idioma a 'en'
+print(configuracion.obtener_valor('senal'))  # Output: en
+print(configuracion.obtener_valor('idioma'))
+print(Configuracion._configuracion)

@@ -22,4 +22,5 @@ class AdministradorConexiones:
 admin_conexiones = AdministradorConexiones()
 conexion1 = admin_conexiones.conectar('usuario1', 'contrasena1')
 conexion2 = admin_conexiones.conectar('usuario2', 'contrasena2')
-print(conexion1 is conexion2)  # Output: True (misma conexión)
+conexion3 = admin_conexiones.conectar('usuario3', 'contrasena3')
+print(conexion1 is conexion3)  # Output: True (misma conexión)
