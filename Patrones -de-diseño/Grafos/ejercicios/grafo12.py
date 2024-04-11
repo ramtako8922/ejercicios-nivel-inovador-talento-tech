@@ -4,11 +4,13 @@ Pesos en las Aristas: Los pesos en las aristas podrían representar la longitud 
 
 Densidad del Grafo: La densidad del grafo dependerá de la cantidad de parques y áreas verdes en la ciudad, así como de la complejidad de los corredores verdes entre ellos. En una ciudad con una red extensa de corredores verdes, el grafo podría ser más denso.
 
-Conectividad: Es importante que el grafo sea conexo para garantizar que todos los parques y áreas verdes estén conectados a través de corredores verdes. Esto es fundamental para facilitar la migración de especies y fomentar la biodiversidad en la ciudad.
+Conectividad: Es importante que el grafo sea conexo para garantizar que todos los 
+parques y áreas verdes estén conectados a través de corredores verdes. Esto es fundamental para facilitar la migración de especies y fomentar la biodiversidad en la ciudad.
 
 Escalabilidad: A medida que se agregan más parques y áreas verdes a la red de corredores verdes, la complejidad del grafo aumentará. Es importante utilizar estructuras de datos eficientes y algoritmos escalables para manejar la información de manera efectiva.
 
-Eficiencia en Búsquedas: Las operaciones de búsqueda frecuentes en este contexto podrían incluir la identificación de corredores verdes clave para la migración de especies, la evaluación del impacto de la urbanización en la conectividad de la biodiversidad y la planificación de nuevas áreas verdes y corredores verdes. Algoritmos como Dijkstra o BFS pueden ser útiles para encontrar rutas óptimas y evaluar la conectividad de la red de corredores verdes. """
+Eficiencia en Búsquedas: Las operaciones de búsqueda frecuentes en este contexto podrían incluir la identificación de corredores verdes clave para la migración de especies, la evaluación del impacto de la urbanización en la conectividad de la biodiversidad y la planificación de nuevas 
+áreas verdes y corredores verdes. Algoritmos como Dijkstra o BFS pueden ser útiles para encontrar rutas óptimas y evaluar la conectividad de la red de corredores verdes. """
 
 # Grafo representando la red de corredores verdes entre parques y áreas verdes
 corredores_verdes = {
