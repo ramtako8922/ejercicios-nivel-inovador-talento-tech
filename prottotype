@@ -1,0 +1,27 @@
+import copy
+
+# Clase base para el prototipo
+class Prototype:
+    def clone(self):
+        return copy.deepcopy(self)
+
+# Clase concreta que actúa como prototipo
+class Producto(Prototype):
+    def __init__(self, nombre, precio):
+        self.nombre = nombre
+        self.precio = precio
+
+    def __str__(self):
+        return f"Producto: {self.nombre}, Precio: {self.precio}"
+
+# Uso del patrón Prototype
+producto_prototipo = Producto("Producto prototipo", 100)
+
+# Clonar el prototipo para crear nuevos objetos
+producto1 = producto_prototipo.clone()
+print("Producto 1:", producto1)
+
+producto2 = producto_prototipo.clone()
+producto2.nombre = "Producto 2"
+producto2.precio = 200
+print("Producto 2:", producto2)
