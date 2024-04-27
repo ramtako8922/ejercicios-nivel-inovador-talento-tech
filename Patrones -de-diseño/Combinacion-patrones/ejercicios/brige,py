@@ -1,0 +1,33 @@
+from abc import ABC, abstractmethod
+
+# Interfaz para el manejador de solicitudes
+class Handler(ABC):
+    @abstractmethod
+    def handle_request(self, request):
+        pass
+
+# Implementación base del Handler
+class BaseHandler(Handler):
+    def __init__(self, successor=None):
+        self._successor = successor
+
+    def set_successor(self, successor):
+        self._successor = successor
+
+    def handle_request(self, request):
+        pass
+
+# Implementación concreta del Handler
+class ConcreteHandler1(BaseHandler):
+    def handle_request(self, request):
+        if request == "ConcreteHandler1":
+            return "ConcreteHandler1 handled the request"
+        elif self._successor:
+            return self._successor.handle_request(request)
+        else:
+            return "Request not handled"
+
+if __name__ == "__main__":
+    handler1 = ConcreteHandler1()
+    handler2 = BaseHandler(handler1)
+    print(handler2.handle_request("ConcreteHandler1"))

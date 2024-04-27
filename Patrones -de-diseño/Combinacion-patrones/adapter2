@@ -1,0 +1,62 @@
+from abc import ABC, abstractmethod
+
+# Abstract Factory
+class InputDeviceFactory(ABC):
+    @abstractmethod
+    def create_adapter(self):
+        pass
+
+# Concrete Factories
+class KeyboardFactory(InputDeviceFactory):
+    def create_adapter(self):
+        return KeyboardAdapter()
+
+class MouseFactory(InputDeviceFactory):
+    def create_adapter(self):
+        return MouseAdapter()
+
+# Adaptee
+class Keyboard:
+    def type(self):
+        return "Typing..."
+
+class Mouse:
+    def click(self):
+        return "Clicking..."
+
+# Adapter
+class InputAdapter(ABC):
+    @abstractmethod
+    def handle_input(self):
+        pass
+
+class KeyboardAdapter(InputAdapter):
+    def __init__(self):
+        self._keyboard = Keyboard()
+
+    def handle_input(self):
+        return self._keyboard.type()
+
+class MouseAdapter(InputAdapter):
+    def __init__(self):
+        self._mouse = Mouse()
+
+    def handle_input(self):
+        return self._mouse.click()
+
+# Client
+class Computer:
+    def __init__(self, input_device_factory):
+        self._adapter = input_device_factory.create_adapter()
+
+    def handle_input(self):
+        return self._adapter.handle_input()
+
+if __name__ == "__main__":
+    keyboard_factory = KeyboardFactory()
+    computer_with_keyboard = Computer(keyboard_factory)
+    print(computer_with_keyboard.handle_input())
+
+    mouse_factory = MouseFactory()
+    computer_with_mouse = Computer(mouse_factory)
+    print(computer_with_mouse.handle_input())
